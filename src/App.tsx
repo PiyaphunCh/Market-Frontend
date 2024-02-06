@@ -10,13 +10,8 @@ import toast, { Toaster } from 'react-hot-toast'
 import { searchArr } from '../function/market'
 
 function App() {
-  const {
-    items,
-    isLoading,
-    isSuccessPost,
-    handleGetAllItems,
-    handleClearSuccess
-  } = useMarket()
+  const { items, isSuccessPost, handleGetAllItems, handleClearSuccess } =
+    useMarket()
   const [isChange, setIsChange] = useState<boolean>(false)
   const [dataChange, setDataChange] = useState<marketItemInitialStateType[]>([])
   const [searchWord, setSearchWord] = useState<string>('')
@@ -106,14 +101,14 @@ function App() {
           numItemsAll={items.length}
           handleCancleChange={handleCancleChange}
         />
-        {!isLoading && (
-          <SettingItem
-            data={itemsShow}
-            setIsChange={setIsChange}
-            setDataChange={setDataChange}
-            isLodingInput={isLodingInput}
-          />
-        )}
+        {/* {!isLoading && ( */}
+        <SettingItem
+          data={itemsShow}
+          setIsChange={setIsChange}
+          setDataChange={setDataChange}
+          isLodingInput={isLodingInput}
+        />
+        {/* )} */}
       </div>
     </div>
   )
