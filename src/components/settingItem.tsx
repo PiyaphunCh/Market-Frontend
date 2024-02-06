@@ -43,7 +43,7 @@ const SettingItem: React.FC<SettingItemProps> = ({
   }, [dataNew])
 
   return (
-    <div className=" w-[100%] max-h-[85dvh] min-h-[85dvh] rounded-md overflow-y-auto overflow-x-hidden">
+    <div className=" w-[100%] max-h-[80dvh] min-h-[80dvh] rounded-md overflow-y-auto overflow-x-auto">
       {
         <div className="flex flex-wrap gap-3 sm:gap-5 m-5 sm:m-2 w-full justify-center">
           {data.length !== 0 ? (
@@ -54,7 +54,7 @@ const SettingItem: React.FC<SettingItemProps> = ({
                   className="bg-white shadow-lg drop-shadow-lg w-[15%] sm:w-[43%] h-[20%] relative rounded-lg"
                 >
                   <div className="w-[100%] p-3">
-                    <div className="w-[100%] text-center text-black border-b-2 pb-1 min-h-[60px] flex items-center justify-center">
+                    <div className="w-[100%] text-center text-black border-b-2 pb-1 min-h-[70px] max-h-[70px] text-wrap  truncate flex items-center justify-center font-bold">
                       {item.name}
                     </div>
                     <img className="w-[70%] mx-auto my-5" src={item.img} />

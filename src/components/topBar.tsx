@@ -29,7 +29,7 @@ const TopBar: React.FC<TopBarProps> = ({
   }
 
   return (
-    <div className="w-[100%] h-[10dvh] flex flex-col  gap-3">
+    <div className="w-[100%] h-[10dvh] flex flex-col items-center justify-center gap-3">
       <div className="w-full flex justify-between">
         <div className="text-black ml-5  flex justify-center items-center font-bold ">
           {searchWord !== ''
@@ -53,7 +53,7 @@ const TopBar: React.FC<TopBarProps> = ({
           </div>
         </div>
       </div>
-      <div className="h-10 mb-2">
+      <div className="h-10 mb-2 w-full">
         {isChange && (
           <div className="ml-16  sm:ml-5 mr-8 sm:mr-0 flex justify-between font-bold">
             <button
