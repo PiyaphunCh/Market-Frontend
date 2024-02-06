@@ -1,19 +1,22 @@
 import { ChangeEvent, useEffect, useState } from 'react'
 import { marketItemInitialStateType } from '../interface/market'
 import { arraysEqual } from '../../function/market'
+import { PuffLoader } from 'react-spinners'
 
 interface SettingItemProps {
   data: marketItemInitialStateType[]
   setIsChange: (newValue: boolean) => void
   setDataChange: (newValue: marketItemInitialStateType[]) => void
   isLodingInput: boolean
+  isLoading: boolean
 }
 
 const SettingItem: React.FC<SettingItemProps> = ({
   data,
   setIsChange,
   setDataChange,
-  isLodingInput
+  isLodingInput,
+  isLoading
 }) => {
   const [dataNew, setDataNew] = useState([...data])
 
@@ -44,7 +47,11 @@ const SettingItem: React.FC<SettingItemProps> = ({
 
   return (
     <div className=" w-[100%] max-h-[80dvh] min-h-[80dvh] rounded-md overflow-y-auto overflow-x-auto">
-      {
+      {isLoading ? (
+        <div className="w-full h-full flex justify-center items-center">
+          <PuffLoader color="#9da3af" />
+        </div>
+      ) : (
         <div className="flex flex-wrap gap-3 sm:gap-5 m-5 sm:m-2 w-full justify-center">
           {data.length !== 0 ? (
             data.map((item: marketItemInitialStateType, key: number) => {
@@ -89,7 +96,7 @@ const SettingItem: React.FC<SettingItemProps> = ({
             </div>
           )}
         </div>
-      }
+      )}
     </div>
   )
 }
