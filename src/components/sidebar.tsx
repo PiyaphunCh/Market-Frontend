@@ -18,10 +18,7 @@ const SideBar = () => {
               key={key}
               className="text-black bg-white m-2 sm:-m-0.5 sm:my-2 rounded-lg py-2 flex justify-center  items-center gap-y-1 shadow-lg drop-shadow-lg font-bold"
             >
-              <img
-                className="sm:hidden h-20"
-                src={`/public/icon/${item.src}`}
-              />
+              <img className="sm:hidden h-20" src={`/icon/${item.src}`} />
               <div className="hidden sm:block uppercase sm:text-sm px-2">
                 {' '}
                 {item.name}
